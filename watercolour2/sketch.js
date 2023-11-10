@@ -28,7 +28,7 @@ const colormap = probmap({
 
 function drawBlob(ctx, radius, colorGetter, layers = 100) {
   let basePoly = generateCirclePoly(0 | uniform(3, 7), radius);
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 5; i++) {
     basePoly = simplify(fractalMutatePoly(basePoly, 30, false), 30);
   }
   const drawIteration = (iter) => {
@@ -51,21 +51,24 @@ ctx.translate(300, 300);
 for (let i = 0; i < 5; i++) {
   const color = colormap();
   drawBlob(ctx, 200, () => color, 30);
-  ctx.translate(0, 50);
+  ctx.translate(Math.floor(Math.random() * 150), Math.floor(Math.random() * 150));
 }
 
-function setup() {
-  ctx.translate(300, 300);
-  noLoop(); // Stops continuous drawing, as we'll manually call drawBlob in setup
-}
+// function setup() {
+//   ctx.translate(300, 300);
+  
+//   noLoop(); // Stops continuous drawing, as we'll manually call drawBlob in setup
 
-function draw() {
-  for (let i = 0; i < 5; i++) {
-    const color = colormap();
-    drawBlob(ctx, 200, () => color, 30);
-    ctx.translate(0, 50);
-  }
-}
+// }
 
-// Manually call drawBlob in setup
+// function draw() {
+//   for (let i = 0; i < 5; i++) {
+//     const color = colormap();
+//     drawBlob(ctx, 200, () => color, 30);
+//     ctx.translate(0, 50);
+    
+//   }
+// }
+
+// // Manually call drawBlob in setup
 // setup();
