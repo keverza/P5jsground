@@ -3,7 +3,7 @@ let walkers =[];
 function setup() {
   createCanvas(600, 1200);
 
-  for(let i =0; i < 10; i++){
+  for(let i =0; i < 50; i++){
 walkers.push(new Walker());
   }
   
@@ -11,9 +11,14 @@ walkers.push(new Walker());
 }
 
 function draw() {
-  for(let walker of walkers){
-  walker.display();
+  background(50);
+  for(let walker of walkers){  
   walker.update();
+  walker.wander()  
+  walker.borders()
+  walker.display();
+
+
   }
   
 }
