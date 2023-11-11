@@ -11,7 +11,7 @@ walkers.push(new Walker());
 }
 
 function draw() {
-  background(50);
+  // background(50);
   for(let walker of walkers){  
   walker.update();
   walker.wander()  
