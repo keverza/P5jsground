@@ -37,7 +37,8 @@ function nextPoint() {
 // -2.1820 < x < 2.6558 and 0 <=y < 9.9983
 function drawPoint() {
   stroke(255);
-  strokeWeight(2);
+  // stroke(random(140), random(140), random(140));
+  strokeWeight(1);
 
   let px = map(x, -2.182, 2.6558, 0, width);
   let py = map(y, 0, 9.9983, height, 0);
@@ -45,7 +46,7 @@ function drawPoint() {
 }
 
 function draw() {
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 1000; i++) {
     drawPoint();
     nextPoint();
   }
